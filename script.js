@@ -54,8 +54,10 @@ return questions;
  * @return: {integer} value 
  */
 function changeVar(variable){
-    let value = 3;   
+    let value = prompt("Choose your" + variable + "value");
+    vale = parseInt(value);
     return value;
+    
 }
 
 /* Function askQuestion(question) 
