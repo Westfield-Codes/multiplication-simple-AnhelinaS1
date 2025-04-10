@@ -2,11 +2,12 @@
  * FLOWCHART:https://lucid.app/lucidchart/3e0bd150-cafd-4a4b-a703-a1919eafbd7a/edit?page=GeKRoDTH-sii#
  */
 
-
 /* Global Variables 
  * Set default values for low and high factors
  * Initialize mistakes array
  */
+var low = 3;
+var high = 9;
 
 
 /* Function main() THIS REPLACES askQuestions(
@@ -17,14 +18,33 @@
  * @param: none
  * @return: none
  */
-
+function main(){
+let score = 0;
+let questions = setUp();
+for(let question =1;question<=questions;question++){
+    score += askQuestion(question);
+}
+    showStats(score,questions);
+}
 
 /* Function setUp()
  * Asks if user wants to keep defaults for low, high, questions. 
  * If not default, prompts user to provide these values
  * @param: none
  * @return: {integer} questions
+ * 
  */
+function setUp(){
+    let questions = 5;
+    let defaults =confirm("Kee defaults?");
+if (defaults == false){
+    low = changeVar("low");
+    high = changeVar("low");
+    questions = changeVar("questions");
+}
+else alert("Defaults kept");
+return questions;
+}
 
 
 /* Function changeVar(variable)
@@ -33,7 +53,10 @@
  * @param: variable
  * @return: {integer} value 
  */
-
+function changeVar(variable){
+    let value = 3;   
+    return value;
+}
 
 /* Function askQuestion(question) 
  * Asks a multiplication question: 2 factors between low and high ranges
@@ -41,30 +64,40 @@
  * @param: {integer} question 
  * @return: boolean value 
  */
+function askQuestion(question) {
+    return true;
 
+}
 
 /* Function showStats()
  * Provides feedback on total correct out of total asked. 
  * If perfect score, displays "Perfection Badge"
  * If not perfect, displays how many right out of questions
- * Calls showErrors to display which factors led to errors to inform study.
+ * Then calls showErrors sending number of errors as parameter. 
  * While user wants to study tables, calls showTable for a factor.
  * Prompt changes from "any tables" to "more tables" 
  * @param: score, questions
  * @return: none
  */
+function showStats(score,questions){
 
-/* Function showErrors(errors)
- * Provides feedback on errors by showing pairs of factors.
- * statsAnalysis() shows most frequent factor in errors.  
- * @param: errors
- * @return: none
- */
-
+}
 
 /* Function showTable(factor)
  * Display the table for the factor passed as a parameter
- * Builds table line by line with a loop, then shows table * One line for each factor value. low to high 
+ * Builds table line by line with a loop, then shows table 
+ * One line for each factor value, low to high 
  * @param: factor
  * @return: none
  */
+function showTable(factor){
+
+}
+
+/* Function showErrors(errors)
+ * Provides feedback on errors by showing pairs of factors from the mistakes array (global).
+ * statsAnalysis() shows the highest most frequent factor in mistakes[]  
+ * @param: errors
+ * @return: none
+*/
+function showErrors(errors){}
